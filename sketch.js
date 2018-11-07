@@ -6,10 +6,16 @@ function setup() {
   slider = createSlider(0, 255);
   slider.position(100, 100);
 
+  slider.elt.addEventListener('input', function () {
+    redraw();
+  });
+
+  noLoop();
+
 }
 
 function draw() {
 
-  background(slider.value(), 0, 0);
+  background(0, slider.value(), 0);
 
 }
